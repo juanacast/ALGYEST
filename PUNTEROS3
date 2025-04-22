@@ -1,0 +1,27 @@
+//Ejercicio2: determinar si un numero es primo o no, con puntero y ademas indicar en que posicion de memoria se guardo el numero 
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+int main() {
+  int num, *dir_num, cont=0;
+  dir_num = &num;
+  std:: cout<< "Ingrese un numero: "; std::cin >> num; 
+
+  for(int i = 1; i<=*dir_num; i++){
+    if(*dir_num%i==0){
+      cont++;
+    }
+  }
+
+  if(cont>2){
+    std:: cout<< "El numero " << *dir_num << " NO es primo" << std:: endl; 
+    std:: cout<< "La direccion de memoria es " << dir_num << std:: endl;
+  }else {
+    std:: cout<< "El numero " << *dir_num << " es primo" << std:: endl; 
+    std:: cout<< "La direccion de memoria es " << dir_num << std:: endl;
+  }
+    
+  }
