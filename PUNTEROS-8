@@ -1,0 +1,29 @@
+//Transmicion de direcciones
+//Ejemplo, intercambiar el valor de 2 variables
+
+#include <iostream>
+#include <stdlib.h> //funciona new y delete
+using namespace std;
+
+void Intercambio(float *, float*); //esto indica q vamos a usar dos direcciones de memoria donde estan guardados los espacios de memoria
+
+int main() {
+  float num1 = 2.5, num2 = 1.2;
+
+  cout<<"El primer numero es: " <<num1<<endl; 
+  cout<<"El segundo numero es: " <<num2<<endl; 
+
+  Intercambio(&num1, &num2);
+  cout<<"Ahora el primer numero es: " << num1 <<endl;
+  cout<<"Ahora el segundo numero es: " <<num2<<endl;
+
+}
+
+void Intercambio(float *dnum1, float *dnum2){
+  float aux; 
+
+  aux = *dnum1; 
+  *dnum1 = *dnum2; 
+  *dnum2 = aux;
+  
+}
