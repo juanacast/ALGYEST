@@ -1,0 +1,20 @@
+//Correspondencias entre arrays y punteros 
+//Cada posicion equivale a 4 bytes
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+int main() {
+  int numeros [] = {1,2,3,4,5};
+  int *dir_numeros;
+
+  dir_numeros = numeros; //le paso a mi direccion el valor inicial del arreglo
+
+  for(int i =0; i<5; i++){
+    cout<< "Elementos del arreglo: [" << i << "] " << *dir_numeros++ << endl;
+    cout<< "Posiciones de memoria " << numeros [i] << "es: " << dir_numeros << endl;
+  }
+
+}
