@@ -1,0 +1,29 @@
+//Ejercicio3: Rellenar un array de N numeros y ver el menor elemento del arreglo 
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+int main() {
+  int nElementos, numeros[100], *dir_numeros, menor=999999;
+
+  cout<< "Ingrese el numero de elementos del arreglo:"<< endl; 
+  cin>> nElementos;
+
+  for(int i=0; i<nElementos; i++){
+    cout<<i+1<<".Ingrese un numero: "<<endl; 
+    cin>> numeros[i]; 
+  }
+
+  dir_numeros = numeros;
+
+  for(int i=0; i<nElementos; i++){
+    if(*dir_numeros < menor){
+      menor = *dir_numeros;
+    }
+    dir_numeros++;
+  }
+
+  cout<< "El numero mas pequeño del arreglo es: " << menor << endl; 
+  
+}
