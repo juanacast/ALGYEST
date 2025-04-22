@@ -1,0 +1,43 @@
+//Asignacion dinaminca de arreglos
+
+#include <iostream>
+#include <stdlib.h> //funciona new y delete
+using namespace std;
+
+//solo vamos a utilizar el espacio necesario para cada arreglo, sin desperdiciar espacio en la memoria 
+//new: reserva el numero de bytes solicitado por al declaracion 
+//delete: libera un bloque de bytes reservado con anterioridad
+
+//Ejemplo, pedir al usuario n calificacion y almacenarlos en un arreglo dinamico
+
+void PedirNotas();//tipo void no me retorna nada
+void MostrarNotas();
+
+int numCalif, *pntCalif;
+
+int main() {
+  PedirNotas(); 
+  MostrarNotas();
+
+  //tengo q librerar la memoria resrvada
+  delete[] pntCalif;
+}
+
+void PedirNotas(){
+  cout<<"Numero de Calificaciones: " ; 
+  cin>>numCalif;
+
+  pntCalif = new int [numCalif]; //creo un arreglo y reservo espacio en la memoria de la cantidad de numeros q ingreso el usuario
+
+  for(int i=0; i<numCalif; i++){
+    cout<<"Ingrese una nota: ";
+    cin>> pntCalif[i];
+  }
+}
+
+void MostrarNotas(){
+  cout<<"\n\nEstas son las notas del usuario: \n";
+  for(int i=0; i<numCalif; i++){
+    cout<<pntCalif[i]<<endl; 
+  }
+}
