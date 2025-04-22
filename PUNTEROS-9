@@ -1,0 +1,28 @@
+//Transmicion de AREEGLOS
+//Ejemplo, hallar el maximo elemento de un arreglo
+
+#include <iostream>
+//#include <stdlib.h> funciona new y delete
+using namespace std;
+
+int eMax(int *, int);
+
+int main() {
+  const int Elemento = 5; 
+  int numeros[Elemento] = {2,4,6,8,9};
+
+  cout<<"El mayor elemento es: " <<eMax(numeros, Elemento);
+  
+}
+
+int eMax (int *dirVector, int Elemento){
+  int max =0;
+  
+  for(int i=0; i<Elemento; i++){
+    if(*(dirVector+i) > max){
+      max = *(dirVector+i);
+    }
+  }
+
+  return max;
+}
