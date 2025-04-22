@@ -1,0 +1,21 @@
+//Ejercicio1: comprobar si un numero es par o impar, y se;alar la posicion de memoria donde se esta guardando el numero, Con punteros
+
+#include <iostream>
+using namespace std;
+
+
+int main() {
+  int numero, *dir_numero; //Declaro la variable y el puntero
+  std::cout<<"Escriba un numero: "; std:: cin>>numero; // Le pido al usuario que ingrese un numero
+  dir_numero = &numero; //Guardo en la varibale dirnum la dirccion del numero ingresado
+  if(*dir_numero%2==0){
+    std:: cout<< "El numero " <<  *dir_numero << " es par" << std::endl;
+    std:: cout<< "La direccion de memoria donde se a guardado el numero es: " << dir_numero << std:: endl;
+  }else{
+    std:: cout<< "El numero " << *dir_numero << " es impar" <<std:: endl;
+    std:: cout<< "La direccion de memoria donde se a guardado el numero es: " <<dir_numero << std:: endl;
+    
+  }
+
+  return 0;
+}
