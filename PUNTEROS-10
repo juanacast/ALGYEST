@@ -1,0 +1,54 @@
+/*Pedir al usuario N numeros, almacenarlos en un arreglo dinamico
+posteriormente ordenar los numeros de manera ascendente y mostrarlos en pantalla*/
+//Utilizar cualquier metodo de ordenamiento
+
+#include <iostream>
+#include <stdlib.h> 
+using namespace std;
+
+void PedirNum();
+void Ordenar(int *,int);
+void Imprimir(int *, int);
+
+int cantArray, *pntArray;
+
+int main(){
+  PedirNum();
+  Ordenar(pntArray, cantArray);
+  Imprimir(pntArray, cantArray);
+  
+}
+
+void PedirNum(){
+  cout<<"Ingresa la cantidad de numeros del arreglo: " ;
+  cin>>cantArray;
+
+  pntArray = new int [cantArray];
+
+  for(int i=0; i<cantArray; i++){
+    cout<<"Carga los numeros/arreglo: ";
+    cin>>*(pntArray+i);
+  }
+}
+//Metodo burbuja
+void Ordenar(int *pntArray, int cantArray){
+  int aux;
+  
+  for(int i=0; i<cantArray; i++){
+    for(int j=0; j<cantArray-1; j++){
+      if(*(pntArray+j)> *(pntArray+j+1)){
+        aux = *(pntArray+j);
+        *(pntArray+j)=*(pntArray+j+1);
+        *(pntArray+j+1)=aux;
+      }
+    }     
+  }
+}
+
+void Imprimir(int *pntArray, int cantArray){
+  cout<<"\n\nArray Ordenado de manera ascendente: ";
+
+  for(int i=0; i<cantArray; i++){
+    cout<<*(pntArray+i);
+  }
+}
