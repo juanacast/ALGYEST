@@ -1,0 +1,58 @@
+/*Hacer una funcion para amlacenar N numeros en un arreglo dinamico, posteriormente en otra 
+funcion buscar un numero en particular*/
+//Se puede utilizar busqueda secunecial o binaria
+
+
+#include <iostream>
+//#include <stdlib.h> 
+using namespace std;
+
+void nArreglo();
+void busqueda (int*, int);
+
+int numArreglo, *pntArreglo;
+
+int main(){
+  nArreglo();
+  busqueda(pntArreglo, numArreglo);
+
+  delete [] pntArreglo;
+
+  
+}
+
+void nArreglo(){
+  cout<< "Ingrese la cantidad de numeros de su arreglo: ";
+  cin >> numArreglo;
+
+  pntArreglo = new int [numArreglo];
+
+  for(int i=0; i<numArreglo; i++){
+    cout<<"Ingrese el numero de arreglo [ " << i << " ]"<<endl;
+    cin>>pntArreglo[i];
+  }
+}
+
+void busqueda (int *pntArreglo, int numArreglo){
+  int valor,i;
+  bool bandera = false;
+
+  cout<<"Ingrese el valor que quiere buscar en el arreglo: ";
+  cin>>valor;
+
+  i=0;
+  while((bandera==false) && (i<numArreglo)){
+    if(*(pntArreglo+i)==valor){
+      bandera=true;
+    }
+    i++;
+  }
+
+  if(bandera==false){
+    cout<<"El VALOR " << valor << " No se encuentra en el arreglo"<<endl;
+  }else{
+    cout<<"El VALOR " << valor << " se encuentra en el arreglo y esta en la posicion " << i-1 <<endl;
+  }
+  
+  
+}
